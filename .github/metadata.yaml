@@ -1,0 +1,9 @@
+# .github/metadata.yaml
+description: "Closed-radix, open-alphabet binary-to-text encoding family — base 16, 32, 58, 62, 64, and 85."
+topics:
+  - primitives
+  - encoding
+  - binary
+homepage: "https://swift-institute.org"
+readme:
+  family: E

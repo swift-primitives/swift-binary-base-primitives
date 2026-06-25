@@ -1,7 +1,4 @@
-# SwiftLint configuration for swift-incits-4-1986
-# Inherits from the shared parent configuration in swift-standards
+# SwiftLint configuration for swift-binary-base-primitives
+# Inherits from the shared parent configuration in swift-primitives
 
-parent_config: https://raw.githubusercontent.com/swift-standards/swift-standards/main/.swiftlint.yml
-
-# Package-specific overrides (if needed)
-# Add any swift-incits-4-1986 specific rules here
+parent_config: https://raw.githubusercontent.com/swift-primitives/.github/main/.swiftlint.yml
