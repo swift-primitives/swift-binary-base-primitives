@@ -10,7 +10,7 @@ Closed-radix, open-alphabet binary↔text encoding family — `Binary.Base.\`16\
 
 - **Closed-radix vocabulary** — `Binary.Base.\`16\``, `\`32\``, `\`58\``, `\`62\``, `\`64\``, `\`85\`` are the entire family. The radix axis is closed by encoding mathematics; arbitrary integers are not addable. Mirrors the `Windows.\`32\`` precedent for backticked-digit nested types.
 - **Open alphabet axis** — alphabets are not part of the type. Spec packages (e.g., `swift-ietf/swift-rfc-4648`) extend `Property where Tag == Binary.Base.Encode, Base == Binary.Base.\`N\`` with named alphabet methods. Custom alphabets are passed as `[UInt8]` parameters at the call site.
-- **Property-based call sites** — `Binary.Base.\`62\`.encode(value)` works directly via `Property.callAsFunction(_:)`; variants chain through (`Binary.Base.\`62\`.encode.gmp(value)`). Built on `swift-property-primitives`'s `Property<Tag, Base>` per the `[API-NAME-008]` Property.View pattern.
+- **Property-based call sites** — `Binary.Base.\`62\`.encode(value)` works directly via `Property.callAsFunction(_:)`; variants chain through (`Binary.Base.\`62\`.encode.gmp(value)`). Built on `swift-property-primitives`'s `Property<Tag, Base>`, following its property-view accessor pattern.
 - **Two algorithm classes** — bit-packing for power-of-2 radixes (16, 32, 64) and integer arithmetic for non-power-of-2 radixes (58, 62, 85). Algorithm dispatch is per-radix; both classes are publicly callable with custom alphabets.
 - **Zero-cost dispatch** — `Property` instances are `~Copyable` with `@inlinable` accessors. Release-mode codegen elides the Property construction at call sites.
 
