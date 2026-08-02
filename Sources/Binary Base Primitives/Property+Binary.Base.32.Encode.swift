@@ -23,7 +23,7 @@ extension Property where Tag == Binary.Base.Encode, Base == Binary.Base.`32` {
         out.reserveCapacity(((bytes.count + 4) / 5) * 8)
         var buffer: UInt64 = 0
         var bits: Int = 0
-        for i in 0..<bytes.count {
+        for i in bytes.indices {
             buffer = (buffer << 8) | UInt64(bytes[i].underlying)
             bits += 8
             while bits >= 5 {

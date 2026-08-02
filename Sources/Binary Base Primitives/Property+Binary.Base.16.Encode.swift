@@ -21,7 +21,7 @@ extension Property where Tag == Binary.Base.Encode, Base == Binary.Base.`16` {
         precondition(alphabet.count == 16, "Base 16 alphabet must contain exactly 16 bytes")
         var out: [Byte] = []
         out.reserveCapacity(bytes.count * 2)
-        for i in 0..<bytes.count {
+        for i in bytes.indices {
             let raw = bytes[i].underlying
             out.append(alphabet[Int(raw >> 4)])
             out.append(alphabet[Int(raw & 0x0F)])
