@@ -47,7 +47,9 @@ struct BinaryBase62Tests {
 
     @Test("custom alphabet path works")
     func customAlphabet() {
-        let alphabet = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210".utf8.map(Byte.init)
+        let alphabet = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210".utf8.map(
+            Byte.init
+        )
         let encoded = Binary.Base.`62`.encode(UInt64(42), alphabet: alphabet)
         let decoded = Binary.Base.`62`.decode(encoded, alphabet: alphabet)
         #expect(decoded == 42)

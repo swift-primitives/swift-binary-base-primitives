@@ -75,7 +75,9 @@ struct BinaryBase62AlphabetTests {
 
     @Test("custom alphabet round-trips")
     func customAlphabet() {
-        let bytes = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210".utf8.map(Byte.init)
+        let bytes = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210".utf8.map(
+            Byte.init
+        )
         let alphabet = Binary.Base.`62`.Alphabet(bytes)
         // 'Z' is now digit 0; '0' is now digit 61.
         #expect(alphabet.decode(Byte(UInt8(ascii: "Z"))) == 0)
