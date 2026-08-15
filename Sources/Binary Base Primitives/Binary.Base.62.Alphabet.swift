@@ -40,7 +40,10 @@ extension Binary.Base.`62` {
 
             var inverse = [UInt8](repeating: 0xFF, count: 256)
             for (digit, codeUnit) in bytes.enumerated() {
-                precondition(inverse[Int(codeUnit.underlying)] == 0xFF, "Base 62 alphabet must contain unique bytes")
+                precondition(
+                    inverse[Int(codeUnit.underlying)] == 0xFF,
+                    "Base 62 alphabet must contain unique bytes"
+                )
                 inverse[Int(codeUnit.underlying)] = UInt8(digit)
             }
 
