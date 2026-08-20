@@ -1,5 +1,5 @@
 public import Byte_Primitives
-public import Byte_Primitives_Standard_Library_Integration
+import Byte_Primitives_Standard_Library_Integration
 public import Property_Primitives
 
 extension Property where Tag == Binary.Base.Encode, Base == Binary.Base.`58` {
