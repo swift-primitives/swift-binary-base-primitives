@@ -2,12 +2,7 @@ public import Byte_Primitives
 public import Property_Primitives
 
 extension Property where Tag == Binary.Base.Encode, Base == Binary.Base.`64` {
-    /// Encode `bytes` as base-64 using the supplied 64-character alphabet.
-    ///
-    /// Output is padded to a multiple of 4 characters with `pad` (when non-nil).
-    /// RFC 4648 §4 standard uses `=`; §5 URL-safe is conventionally unpadded.
-    ///
-    /// - Precondition: `alphabet.count == 64`.
+
     public func callAsFunction(
         _ bytes: borrowing [Byte],
         alphabet: borrowing [Byte],

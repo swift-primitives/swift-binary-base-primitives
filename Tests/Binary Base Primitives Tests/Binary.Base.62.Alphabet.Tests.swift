@@ -54,7 +54,7 @@ struct BinaryBase62AlphabetTests {
     func gmpDiffers() {
         let standard = Binary.Base.`62`.Alphabet.standard
         let gmp = Binary.Base.`62`.Alphabet.gmp
-        // 'A' is digit 10 in standard, digit 0 in gmp.
+
         #expect(standard.decode(Byte(UInt8(ascii: "A"))) == 10)
         #expect(gmp.decode(Byte(UInt8(ascii: "A"))) == 0)
         #expect(gmp.decode(Byte(UInt8(ascii: "0"))) == 52)
@@ -63,7 +63,7 @@ struct BinaryBase62AlphabetTests {
     @Test("inverted alphabet differs from standard")
     func invertedDiffers() {
         let inverted = Binary.Base.`62`.Alphabet.inverted
-        // digits → lowercase → uppercase: 'a' is 10, 'A' is 36.
+
         #expect(inverted.decode(Byte(UInt8(ascii: "a"))) == 10)
         #expect(inverted.decode(Byte(UInt8(ascii: "A"))) == 36)
     }
@@ -79,11 +79,11 @@ struct BinaryBase62AlphabetTests {
             Byte.init
         )
         let alphabet = Binary.Base.`62`.Alphabet(bytes)
-        // 'Z' is now digit 0; '0' is now digit 61.
+
         #expect(alphabet.decode(Byte(UInt8(ascii: "Z"))) == 0)
         #expect(alphabet.decode(Byte(UInt8(ascii: "0"))) == 61)
         #expect(alphabet.decode(Byte(UInt8(ascii: "?"))) == nil)
-        // round-trip
+
         for value: UInt8 in 0..<62 {
             #expect(alphabet.decode(alphabet.encode(value)) == value)
         }

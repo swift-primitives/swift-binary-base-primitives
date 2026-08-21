@@ -2,13 +2,7 @@ public import Byte_Primitives
 public import Property_Primitives
 
 extension Property where Tag == Binary.Base.Decode, Base == Binary.Base.`32` {
-    /// Decode `text` as base-32 using the supplied 32-character alphabet.
-    ///
-    /// Padding bytes equal to `pad` (when non-nil) are stripped before decoding.
-    /// Returns `nil` if input contains an invalid character or has invalid
-    /// post-strip length.
-    ///
-    /// - Precondition: `alphabet.count == 32`.
+
     public func callAsFunction(
         _ text: borrowing String,
         alphabet: borrowing [Byte],

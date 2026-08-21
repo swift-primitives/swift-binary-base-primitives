@@ -2,17 +2,7 @@ public import Byte_Primitives
 public import Property_Primitives
 
 extension Property where Tag == Binary.Base.Encode, Base == Binary.Base.`32` {
-    /// Encode `bytes` as base-32 using the supplied 32-character alphabet.
-    ///
-    /// Output is padded to a multiple of 8 characters with `pad` (when non-nil).
-    /// RFC 4648 §6 / §7 use `=` as pad; Crockford and z-base-32 are unpadded.
-    ///
-    /// - Parameters:
-    ///   - bytes: Input byte array.
-    ///   - alphabet: Exactly 32 ASCII bytes — index `i` is the digit value `i`.
-    ///   - pad: Optional pad byte; output is right-padded to a multiple of 8.
-    /// - Returns: The base-32 ASCII string, padded to a multiple of 8 characters when `pad` is supplied.
-    /// - Precondition: `alphabet.count == 32`.
+
     public func callAsFunction(
         _ bytes: borrowing [Byte],
         alphabet: borrowing [Byte],

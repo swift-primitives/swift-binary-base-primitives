@@ -3,12 +3,7 @@ import Byte_Primitives_Standard_Library_Integration
 public import Property_Primitives
 
 extension Property where Tag == Binary.Base.Encode, Base == Binary.Base.`85` {
-    /// Encode a fixed-width unsigned integer as base-85 using the supplied alphabet.
-    ///
-    /// Variable-length output via repeated division by 85. Spec packages
-    /// (RFC 1924, ZeroMQ Z85, Adobe Ascii85) provide alphabet-specific overloads.
-    ///
-    /// - Precondition: `alphabet.count == 85`.
+
     public func callAsFunction(
         _ value: UInt64,
         alphabet: borrowing [Byte]

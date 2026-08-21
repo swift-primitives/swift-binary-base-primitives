@@ -2,11 +2,7 @@ public import Byte_Primitives
 public import Property_Primitives
 
 extension Property where Tag == Binary.Base.Decode, Base == Binary.Base.`85` {
-    /// Decode `text` as a base-85 unsigned integer using the supplied alphabet.
-    ///
-    /// Returns `nil` on invalid character or numeric overflow beyond `UInt64.max`.
-    ///
-    /// - Precondition: `alphabet.count == 85`.
+
     public func callAsFunction(
         _ text: borrowing String,
         alphabet: borrowing [Byte]

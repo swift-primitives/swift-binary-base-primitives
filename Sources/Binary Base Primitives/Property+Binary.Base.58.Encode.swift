@@ -3,12 +3,7 @@ import Byte_Primitives_Standard_Library_Integration
 public import Property_Primitives
 
 extension Property where Tag == Binary.Base.Encode, Base == Binary.Base.`58` {
-    /// Encode a fixed-width unsigned integer as base-58 using the supplied alphabet.
-    ///
-    /// Variable-length output via repeated division by 58. Spec packages
-    /// (e.g., a future `swift-base58-bitcoin`) provide alphabet-specific overloads.
-    ///
-    /// - Precondition: `alphabet.count == 58`.
+
     public func callAsFunction(
         _ value: UInt64,
         alphabet: borrowing [Byte]
